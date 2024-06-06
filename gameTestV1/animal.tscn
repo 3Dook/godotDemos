@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://kbeqv6t5llk3"]
+
+[ext_resource type="Script" path="res://animal.gd" id="1_0mr2p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ec4du"]
+
+[node name="animal" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_0mr2p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ec4du")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -6.0
+offset_top = -11.0
+offset_right = 34.0
+offset_bottom = 12.0
+text = "A"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
