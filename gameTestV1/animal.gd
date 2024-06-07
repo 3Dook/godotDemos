@@ -2,6 +2,10 @@ extends CharacterBody2D
 
 class_name Animal
 
+signal sold_animal
+
+
+
 var SPEED = 300.0
 var nickname: String
 var food: String
@@ -11,6 +15,7 @@ var cost: int
 var reproduce: float
 var produce: String
 var excrete: String
+var value : int
 
 var move_direction : Vector2 = Vector2.ZERO
 
@@ -24,6 +29,7 @@ func _init(newFood := "money", name := "nobody"):
 	reproduce = 0.5
 	produce = "Air"
 	excrete = "poop"
+	value = cost / 2
 	
 func say_self():
 	print("I am ", name)
@@ -60,6 +66,8 @@ func select_new_direction():
 
 
 func _on_timer_timeout():
+	age += 1
+	value += age / 2
 	select_new_direction()
 	$Timer.start()
 	#say_self()
@@ -74,5 +82,14 @@ func _input(event):
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
-		if event.pressed:
+		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			say_self()
+		if event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+			sell_self()
+		
+
+func sell_self():
+	emit_signal("sold_animal", value)
+	self.queue_free()
+
+
