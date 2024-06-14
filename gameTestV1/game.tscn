@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://mi413g0gopd5"]
+[gd_scene load_steps=7 format=3 uid="uid://mi413g0gopd5"]
 
 [ext_resource type="Texture2D" uid="uid://0r84kp0inb5o" path="res://assests/Tilesets/Grass.png" id="1_wywb8"]
 [ext_resource type="Script" path="res://GameManager.gd" id="1_xmvyt"]
+[ext_resource type="Resource" uid="uid://dytvffx8h33ku" path="res://game_inventory.tres" id="2_we35v"]
+[ext_resource type="PackedScene" uid="uid://dd31ejo4fytjj" path="res://inventory_ui.tscn" id="3_wx80o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ucor4"]
 texture = ExtResource("1_wywb8")
@@ -84,6 +86,7 @@ sources/0 = SubResource("TileSetAtlasSource_ucor4")
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_xmvyt")
+inventory = ExtResource("2_we35v")
 
 [node name="Timer" type="Timer" parent="GameManager"]
 
@@ -100,17 +103,17 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 2621440, 0, 2, 2621511, 131072, 2,
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 60.0
-offset_top = 548.0
-offset_right = 1191.0
-offset_bottom = 595.0
+offset_left = 31.0
+offset_top = 46.0
+offset_right = 1074.0
+offset_bottom = 163.0
 
 [node name="scoreLabel" type="Container" parent="Control"]
 layout_mode = 0
-offset_left = -6.0
-offset_top = -407.0
-offset_right = 34.0
-offset_bottom = -367.0
+offset_left = 834.0
+offset_top = 15.0
+offset_right = 874.0
+offset_bottom = 55.0
 
 [node name="userScore" type="Label" parent="Control/scoreLabel"]
 unique_name_in_owner = true
@@ -118,9 +121,17 @@ layout_mode = 2
 
 [node name="Buy" type="Button" parent="Control"]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 62.0
+offset_top = 22.0
+offset_right = 102.0
+offset_bottom = 53.0
 text = "BUY"
+
+[node name="inv_ui" parent="." instance=ExtResource("3_wx80o")]
+offset_left = 201.0
+offset_top = 510.0
+offset_right = 408.0
+offset_bottom = 534.0
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="pressed" from="Control/Buy" to="GameManager" method="add_chicken"]
