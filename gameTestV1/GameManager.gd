@@ -12,7 +12,8 @@ var Day : int
 #inventory
 @export var inventory = Inventory
 
-
+#signal
+signal collecting_egg
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,9 +38,20 @@ func add_chicken():
 	newC.position.x = 500
 	newC.position.y = 350
 	newC.sold_animal.connect(self.sold_something)
+	newC.made_egg.connect(self.collect_egg)
 	get_node("../BaseLevel/animalTracker").add_child(newC)
 
-
+func collect_egg(item):
+	# item_instance.connect(signal, self, self.funcTo do something)
+	item.COLLECT_EGG.connect(self.do_something_with_collect_egg)
+	#print(item)
+	
+func do_something_with_collect_egg(egg):
+	emit_signal("collecting_egg", egg)
+	#print("this should go into inventory", egg)
+	
+	
+	
 func sold_something(val):
 	print("sold an animal for ", val)
 	MONEY += val

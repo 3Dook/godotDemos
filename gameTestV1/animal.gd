@@ -113,7 +113,7 @@ func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			if has_mouse:
-				say_self()
+				#say_self()
 				is_dragging = true
 			else: 
 				is_dragging = false

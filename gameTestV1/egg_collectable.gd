@@ -1,5 +1,8 @@
 extends StaticBody2D
 
+signal COLLECT_EGG
+
+@onready var tempEgg = preload("res://egg.tres").duplicate()
 
 var is_dragging:bool = false
 var has_mouse:bool = false
@@ -33,8 +36,14 @@ func _input(event):
 	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
 		if event.pressed:
 			if has_mouse:
-				print('collect me')
-		
+				collect_me()
+
+
+func collect_me():
+	COLLECT_EGG.emit(self)
+	self.queue_free()
+	
+
 """
 func _on_input_event(viewport, event, shape_idx):
 	
