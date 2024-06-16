@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://h3nevwxh1bcf" path="res://assests/Egg_item.png" id="2_1c3pt"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_jcypc")
 name = "Egg"
 texture = ExtResource("2_1c3pt")
 amount = 1
+maxAmount = 2

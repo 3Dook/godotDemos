@@ -12,6 +12,8 @@ var Day : int
 #inventory
 @export var inventory = Inventory
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	MONEY = 100

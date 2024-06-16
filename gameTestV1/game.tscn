@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://0r84kp0inb5o" path="res://assests/Tilesets/Grass.png" id="1_wywb8"]
 [ext_resource type="Script" path="res://GameManager.gd" id="1_xmvyt"]
-[ext_resource type="Resource" uid="uid://dytvffx8h33ku" path="res://game_inventory.tres" id="2_we35v"]
 [ext_resource type="PackedScene" uid="uid://dd31ejo4fytjj" path="res://inventory_ui.tscn" id="3_wx80o"]
+[ext_resource type="PackedScene" uid="uid://c5e0i6x56aksb" path="res://egg_collectable.tscn" id="4_xvi06"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ucor4"]
 texture = ExtResource("1_wywb8")
@@ -86,7 +86,6 @@ sources/0 = SubResource("TileSetAtlasSource_ucor4")
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_xmvyt")
-inventory = ExtResource("2_we35v")
 
 [node name="Timer" type="Timer" parent="GameManager"]
 
@@ -101,12 +100,14 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 2621440, 0, 2, 2621511, 131072, 2,
 [node name="animalTracker" type="Node" parent="BaseLevel"]
 
 [node name="Control" type="Control" parent="."]
+z_index = 1
 layout_mode = 3
 anchors_preset = 0
 offset_left = 31.0
 offset_top = 46.0
 offset_right = 1074.0
 offset_bottom = 163.0
+mouse_filter = 2
 
 [node name="scoreLabel" type="Container" parent="Control"]
 layout_mode = 0
@@ -128,10 +129,14 @@ offset_bottom = 53.0
 text = "BUY"
 
 [node name="inv_ui" parent="." instance=ExtResource("3_wx80o")]
+z_index = 1
 offset_left = 201.0
 offset_top = 510.0
 offset_right = 408.0
 offset_bottom = 534.0
+
+[node name="egg_collectable" parent="." instance=ExtResource("4_xvi06")]
+position = Vector2(510, 325)
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="pressed" from="Control/Buy" to="GameManager" method="add_chicken"]
