@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5e0i6x56aksb"]
+
+[ext_resource type="Script" path="res://egg_collectable.gd" id="1_8f31l"]
+[ext_resource type="Texture2D" uid="uid://h3nevwxh1bcf" path="res://assests/Egg_item.png" id="2_328p1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lqx6h"]
+radius = 8.0
+
+[node name="egg_collectable" type="StaticBody2D"]
+z_index = 4
+scale = Vector2(3, 3)
+input_pickable = true
+script = ExtResource("1_8f31l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_328p1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lqx6h")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
