@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dd31ejo4fytjj"]
 
-[ext_resource type="Script" path="res://inventory_ui.gd" id="1_dt5qw"]
+[ext_resource type="Script" path="res://inventory/inventory_ui.gd" id="1_dt5qw"]
 [ext_resource type="Texture2D" uid="uid://cpwe76rbmj24d" path="res://assests/inventory-background.png" id="1_wv0qd"]
-[ext_resource type="PackedScene" uid="uid://c77w2v5xjgqcf" path="res://inv_ui_slot.tscn" id="2_sxart"]
+[ext_resource type="PackedScene" uid="uid://c77w2v5xjgqcf" path="res://inventory/inv_ui_slot.tscn" id="2_sxart"]
 
 [node name="inv_ui" type="Control"]
 layout_mode = 3
@@ -38,7 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 10
 
-[node name="inv_ui_slot" parent="NinePatchRect/GridContainer" instance=ExtResource("2_sxart")]
+[node name="inv_ui_slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("2_sxart")]
 layout_mode = 2
 
 [node name="inv_ui_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_sxart")]
@@ -67,3 +67,8 @@ layout_mode = 2
 
 [node name="inv_ui_slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("2_sxart")]
 layout_mode = 2
+
+[node name="grabbed_slot" parent="." instance=ExtResource("2_sxart")]
+visible = false
+modulate = Color(1, 1, 1, 0.478431)
+self_modulate = Color(1, 1, 1, 0)

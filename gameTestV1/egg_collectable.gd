@@ -40,7 +40,7 @@ func _input(event):
 
 
 func collect_me():
-	COLLECT_EGG.emit(self)
+	COLLECT_EGG.emit(tempEgg)
 	self.queue_free()
 	
 

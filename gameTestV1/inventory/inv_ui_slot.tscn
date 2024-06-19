@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c77w2v5xjgqcf"]
 
-[ext_resource type="Script" path="res://inv_ui_slot.gd" id="1_8uy74"]
+[ext_resource type="Script" path="res://inventory/inv_ui_slot.gd" id="1_8uy74"]
 [ext_resource type="Texture2D" uid="uid://cjg6yguf1yshj" path="res://assests/inventory-slot.png" id="1_glqx1"]
 [ext_resource type="FontFile" uid="uid://c4g3kv6hvwbud" path="res://assests/fonts/PixelOperator8-Bold.ttf" id="3_mgudd"]
 
@@ -23,11 +23,12 @@ offset_right = 16.0
 offset_bottom = 16.0
 
 [node name="Panel" type="Panel" parent="CenterContainer"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
 [node name="item_visual" type="Sprite2D" parent="CenterContainer/Panel"]
 
-[node name="Label" type="Label" parent="CenterContainer/Panel/item_visual"]
+[node name="quantityLabel" type="Label" parent="CenterContainer/Panel/item_visual"]
 offset_left = -5.0
 offset_top = 2.0
 offset_right = 37.0
@@ -36,3 +37,7 @@ scale = Vector2(0.26, 0.26)
 theme_override_fonts/font = ExtResource("3_mgudd")
 horizontal_alignment = 2
 vertical_alignment = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
