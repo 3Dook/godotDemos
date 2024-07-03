@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://culjt4sg3406d"]
+
+[ext_resource type="Script" path="res://inventory/inv_ui.gd" id="1_2ach5"]
+[ext_resource type="Texture2D" uid="uid://cpwe76rbmj24d" path="res://assests/inventory-background.png" id="1_4c851"]
+[ext_resource type="PackedScene" uid="uid://d36bmjiftc74m" path="res://inventory/inv_slot.tscn" id="2_bdaqc"]
+
+[node name="inv_ui" type="CanvasLayer"]
+script = ExtResource("1_2ach5")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = 39.0
+offset_top = 509.0
+offset_right = 245.0
+offset_bottom = 531.0
+scale = Vector2(4, 4)
+mouse_filter = 0
+texture = ExtResource("1_4c851")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -8.0
+offset_right = 106.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 10
+
+[node name="inv_slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("2_bdaqc")]
+layout_mode = 2
+
+[node name="inv_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_bdaqc")]
+layout_mode = 2
+
+[node name="inv_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("2_bdaqc")]
+layout_mode = 2
+
+[node name="inv_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("2_bdaqc")]
+layout_mode = 2
+
+[node name="inv_slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("2_bdaqc")]
+layout_mode = 2
+
+[node name="inv_slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("2_bdaqc")]
+layout_mode = 2
+
+[node name="inv_slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("2_bdaqc")]
+layout_mode = 2
+
+[node name="inv_slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("2_bdaqc")]
+layout_mode = 2
+
+[node name="inv_slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("2_bdaqc")]
+layout_mode = 2
+
+[node name="inv_slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("2_bdaqc")]
+layout_mode = 2
+
+[node name="grab_slot" parent="." instance=ExtResource("2_bdaqc")]
+visible = false
+modulate = Color(1, 1, 1, 0.490196)
+self_modulate = Color(1, 1, 1, 0.831373)
+scale = Vector2(4, 4)
+do_not_focus = false
+
+[node name="clickTimer" type="Timer" parent="."]
+
+[node name="doubleTimer" type="Timer" parent="."]
+
+[node name="animalTracker" type="Node2D" parent="."]
+
+[connection signal="mouse_entered" from="NinePatchRect" to="." method="_on_nine_patch_rect_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect" to="." method="_on_nine_patch_rect_mouse_exited"]
+[connection signal="timeout" from="clickTimer" to="." method="_on_click_timer_timeout"]
+[connection signal="timeout" from="doubleTimer" to="." method="_on_double_timer_timeout"]

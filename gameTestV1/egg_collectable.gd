@@ -1,8 +1,10 @@
 extends StaticBody2D
 
 signal COLLECT_EGG
+signal add_to_grabbed_slot
 
 @onready var tempEgg = preload("res://egg.tres").duplicate()
+@export var slot_ref: SlotData
 
 var is_dragging:bool = false
 var has_mouse:bool = false
@@ -14,8 +16,10 @@ var has_mouse:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var temp = SlotData.new()
+	temp.set_slotData(tempEgg)
+	slot_ref = temp
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -28,11 +32,7 @@ func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			if has_mouse:
-				is_dragging = true
-			else: 
-				is_dragging = false
-		else:
-			is_dragging = false
+				add_to_grabbed_slot.emit(slot_ref)
 	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
 		if event.pressed:
 			if has_mouse:

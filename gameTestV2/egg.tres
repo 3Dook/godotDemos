@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Collectable" load_steps=3 format=3 uid="uid://hjlamawcliah"]
+
+[ext_resource type="Script" path="res://collectable.gd" id="1_obpgw"]
+[ext_resource type="Texture2D" uid="uid://h3nevwxh1bcf" path="res://assests/Egg_item.png" id="2_736nh"]
+
+[resource]
+script = ExtResource("1_obpgw")
+name = "egg"
+texture = ExtResource("2_736nh")
+stackable = true

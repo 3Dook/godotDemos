@@ -1,5 +1,6 @@
 extends Control
 
+#extends CanvasLayer
 @onready var inventory: Inventory = preload("res://inventory/game_inventory.tres")
 #@onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 
@@ -10,6 +11,10 @@ const Slot = preload("res://inventory/inv_ui_slot.tscn")
 var is_open = false
 var grabbed_slot_data: SlotData
 @onready var grabbed_slot = $grabbed_slot
+
+#signals
+signal drop_data_main
+
 
 func _ready():
 	
@@ -25,6 +30,7 @@ func _process(delta):
 			open()
 
 	if grabbed_slot.visible:
+		#grabbed_slot.global_position = grabbed_slot.get_global_mouse_position() + Vector2(5,5)
 		grabbed_slot.global_position = get_global_mouse_position() + Vector2(5,5)
 func on_slot_clicked(index, mouseIndex):
 	print("the index - ", index, " mouse - ", mouseIndex)
@@ -57,7 +63,11 @@ func update_grabbed_slot():
 		grabbed_slot.hide()
 		
 
-
+func grab_slot_is_done():
+	print("clear queue slot data")
+	grabbed_slot_data = null
+	update_grabbed_slot()
+	
 func open():
 	visible = true
 	is_open = true
@@ -81,3 +91,15 @@ func update_slots(inven):
 			slot.set_slot_data(slot_data)
 	
 	#print(inventory.itemsArray)
+
+
+func _on_gui_input(event):
+
+	if event is InputEventMouseButton and event.is_pressed() and grabbed_slot_data:
+		
+		match event.button_index:
+			#signal to main game:
+			MOUSE_BUTTON_LEFT:
+				print("droping data - ", grabbed_slot_data)
+				#signal
+				drop_data_main.emit(grabbed_slot_data, grabbed_slot)

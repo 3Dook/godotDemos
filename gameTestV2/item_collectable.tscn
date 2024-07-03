@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bylds8i5vypfi"]
+
+[ext_resource type="Script" path="res://item_collectable.gd" id="1_73eij"]
+[ext_resource type="FontFile" uid="uid://bbt8vb0734vcg" path="res://assests/fonts/PixelOperator8.ttf" id="3_1klc3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_omjgf"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ysrqd"]
+radius = 8.0
+
+[node name="item_collectable" type="StaticBody2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_73eij")
+
+[node name="item_visual" type="Sprite2D" parent="."]
+
+[node name="quantityLabel" type="Label" parent="item_visual"]
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 29.0
+offset_bottom = 20.0
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("3_1klc3")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="CollisionArea" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_omjgf")
+debug_color = Color(0.574015, 0.554269, 0.0191738, 0.42)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="clickArea" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ysrqd")
+debug_color = Color(0.846939, 0.222641, 0.751863, 0.42)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

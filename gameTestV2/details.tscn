@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://b51axy1p18ngr"]
+
+[ext_resource type="Script" path="res://details.gd" id="1_3xt7y"]
+[ext_resource type="FontFile" uid="uid://c4g3kv6hvwbud" path="res://assests/fonts/PixelOperator8-Bold.ttf" id="1_a0un0"]
+[ext_resource type="FontFile" uid="uid://bbt8vb0734vcg" path="res://assests/fonts/PixelOperator8.ttf" id="2_1enkj"]
+
+[node name="Details" type="CanvasLayer"]
+script = ExtResource("1_3xt7y")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.25098)
+offset_left = 888.0
+offset_top = 12.0
+offset_right = 1118.0
+offset_bottom = 553.0
+mouse_filter = 2
+color = Color(0.42934, 0.786386, 0.974045, 1)
+
+[node name="board" type="Label" parent="ColorRect"]
+z_index = -4
+layout_mode = 0
+offset_top = -2.0
+offset_right = 227.0
+offset_bottom = 538.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Menu" type="Label" parent="ColorRect/board"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 24.0
+offset_right = 193.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0.000481124, 0.00230613, 0.00202038, 1)
+theme_override_fonts/font = ExtResource("1_a0un0")
+theme_override_font_sizes/font_size = 40
+text = "MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="buyScore" type="Label" parent="ColorRect/board"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 86.0
+offset_right = 205.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0, 0.00392157, 0.00392157, 1)
+theme_override_fonts/font = ExtResource("2_1enkj")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/board/buyScore"]
+layout_mode = 0
+offset_left = -66.0
+offset_top = -8.0
+offset_right = -9.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0, 0.00392157, 0.00392157, 1)
+theme_override_fonts/font = ExtResource("1_a0un0")
+theme_override_font_sizes/font_size = 30
+text = "$:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="helper" type="Label" parent="ColorRect/board"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 184.0
+offset_right = 213.0
+offset_bottom = 514.0
+theme_override_fonts/font = ExtResource("2_1enkj")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dayLabel" type="Label" parent="ColorRect/board"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 141.0
+offset_right = 150.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "DAY:
+"
+vertical_alignment = 1
+
+[node name="dayTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="dayTimer" to="." method="_on_day_timer_timeout"]

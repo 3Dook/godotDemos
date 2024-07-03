@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://dek82uvtvfmya"]
+
+[ext_resource type="Script" path="res://game_manager.gd" id="1_bm34m"]
+[ext_resource type="PackedScene" uid="uid://ccnk8ypyetqq0" path="res://buy_control.tscn" id="1_j3sl4"]
+
+[node name="gameManager" type="Node"]
+script = ExtResource("1_bm34m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.521569)
+show_behind_parent = true
+offset_left = 26.0
+offset_top = 19.0
+offset_right = 858.0
+offset_bottom = 103.0
+mouse_filter = 2
+color = Color(0.748657, 0.598456, 0.32262, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(731, 84)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -516.0
+offset_top = -294.0
+offset_right = 215.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="buyControl" parent="CanvasLayer/GridContainer" instance=ExtResource("1_j3sl4")]
+layout_mode = 2
+
+[node name="buyControl2" parent="CanvasLayer/GridContainer" instance=ExtResource("1_j3sl4")]
+layout_mode = 2
+
+[node name="buyControl3" parent="CanvasLayer/GridContainer" instance=ExtResource("1_j3sl4")]
+layout_mode = 2
+
+[node name="buyControl4" parent="CanvasLayer/GridContainer" instance=ExtResource("1_j3sl4")]
+layout_mode = 2

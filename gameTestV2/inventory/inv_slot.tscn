@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://d36bmjiftc74m"]
+
+[ext_resource type="Texture2D" uid="uid://cjg6yguf1yshj" path="res://assests/inventory-slot.png" id="1_hoolr"]
+[ext_resource type="Script" path="res://inventory/inv_slot.gd" id="1_wffjp"]
+[ext_resource type="FontFile" uid="uid://bbt8vb0734vcg" path="res://assests/fonts/PixelOperator8.ttf" id="2_jeuxi"]
+
+[node name="inv_slot" type="Control"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 16.0
+offset_bottom = 16.0
+script = ExtResource("1_wffjp")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="backG" type="Sprite2D" parent="CenterContainer/Panel"]
+texture = ExtResource("1_hoolr")
+
+[node name="item_visual" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="qtyLabel" type="Label" parent="CenterContainer/Panel/item_visual"]
+offset_top = 3.0
+offset_right = 28.0
+offset_bottom = 19.0
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("2_jeuxi")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="ClickTimer" type="Timer" parent="."]
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

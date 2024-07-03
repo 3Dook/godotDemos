@@ -8,6 +8,8 @@ const MAX_STACK_SIZE: int = 9
 @export var item_data: Collectable
 @export_range(1, MAX_STACK_SIZE) var quantity: int = 1: set = set_quantity
 
+func set_slotData(item: Collectable):
+	item_data = item
 
 func can_merge_with(other_slot_data: SlotData):
 	return item_data == other_slot_data.item_data and item_data.stackable and quantity < MAX_STACK_SIZE

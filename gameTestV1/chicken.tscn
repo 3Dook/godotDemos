@@ -7,6 +7,7 @@
 size = Vector2(11, 11.2)
 
 [node name="chicken" type="CharacterBody2D"]
+z_index = 5
 scale = Vector2(5, 5)
 input_pickable = true
 script = ExtResource("1_rqm0e")
