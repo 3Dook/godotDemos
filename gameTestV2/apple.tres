@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Collectable" load_steps=3 format=3 uid="uid://cqqp2cp030gj8"]
+
+[ext_resource type="Script" path="res://collectable.gd" id="1_wnsru"]
+[ext_resource type="Texture2D" uid="uid://dun53hkfrbust" path="res://assests/apple.png" id="2_oqir1"]
+
+[resource]
+script = ExtResource("1_wnsru")
+name = "apple"
+texture = ExtResource("2_oqir1")
+stackable = true

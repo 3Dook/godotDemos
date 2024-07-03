@@ -7,7 +7,8 @@
 radius = 8.0
 
 [node name="egg_collectable" type="StaticBody2D"]
-z_index = 4
+z_index = 5
+z_as_relative = false
 scale = Vector2(3, 3)
 input_pickable = true
 script = ExtResource("1_8f31l")

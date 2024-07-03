@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccnk8ypyetqq0"]
+
+[ext_resource type="Script" path="res://buy_control.gd" id="1_71we6"]
+[ext_resource type="Texture2D" uid="uid://br6mx2sidxonl" path="res://assests/inventorySlot.png" id="1_swmqk"]
+[ext_resource type="Texture2D" uid="uid://cxptdfics6tcb" path="res://assests/Free Chicken Sprites.png" id="2_ixeyn"]
+[ext_resource type="FontFile" uid="uid://bbt8vb0734vcg" path="res://assests/fonts/PixelOperator8.ttf" id="3_beatk"]
+
+[node name="buyControl" type="Control"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(4, 4)
+script = ExtResource("1_71we6")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="backG" type="Sprite2D" parent="CenterContainer/Panel"]
+position = Vector2(32, 32)
+scale = Vector2(3.165, 3.165)
+texture = ExtResource("1_swmqk")
+vframes = 2
+
+[node name="visual" type="Sprite2D" parent="CenterContainer/Panel"]
+position = Vector2(34.6, 28.85)
+scale = Vector2(3.51875, 3.3)
+texture = ExtResource("2_ixeyn")
+hframes = 4
+vframes = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 39.75
+offset_right = 245.0
+offset_bottom = 122.75
+scale = Vector2(0.19, 0.19)
+theme_override_colors/font_color = Color(0.835294, 0.988235, 0.145098, 1)
+theme_override_fonts/font = ExtResource("3_beatk")
+theme_override_font_sizes/font_size = 40
+text = "CHICKEN
+$: 50"
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 63.0
+offset_bottom = 64.0
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

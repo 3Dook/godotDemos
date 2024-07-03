@@ -109,6 +109,7 @@ func _on_input_event(viewport, event, shape_idx):
 			sell_self()
 	
 """
+"""
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
@@ -123,6 +124,8 @@ func _input(event):
 		if event.pressed:
 			if has_mouse:
 				sell_self()
+"""
+
 
 
 func sell_self():

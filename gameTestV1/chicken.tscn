@@ -7,13 +7,13 @@
 size = Vector2(11, 11.2)
 
 [node name="chicken" type="CharacterBody2D"]
+z_index = 5
 scale = Vector2(5, 5)
 input_pickable = true
 script = ExtResource("1_rqm0e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.3, 0.4)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ec4du")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -28,5 +28,5 @@ func hatch_egg():
 	egg.position.x = self.position.x
 	egg.position.y = self.position.y
 	emit_signal("made_egg", egg)
-	get_node("/root/Game/BaseLevel/animalTracker").add_child(egg)
+	get_node("/root/Game/inv_ui/AnimalTracker").add_child(egg)
 	$hatchTimer.start()

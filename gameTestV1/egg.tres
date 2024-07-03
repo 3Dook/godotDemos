@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Collectable" load_steps=3 format=3 uid="uid://jcy810eg6iq8"]
 
-[ext_resource type="Script" path="res://collectable.gd" id="1_jcypc"]
+[ext_resource type="Script" path="res://inventory/collectable.gd" id="1_jcypc"]
 [ext_resource type="Texture2D" uid="uid://h3nevwxh1bcf" path="res://assests/Egg_item.png" id="2_1c3pt"]
 
 [resource]
@@ -8,5 +8,4 @@ resource_local_to_scene = true
 script = ExtResource("1_jcypc")
 name = "Egg"
 texture = ExtResource("2_1c3pt")
-amount = 1
-maxAmount = 2
+stackable = true
