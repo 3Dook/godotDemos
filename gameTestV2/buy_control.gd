@@ -11,7 +11,6 @@ extends Control
 signal buy_clicked
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print('what happening')
 	pass
 	
 	
@@ -51,4 +50,5 @@ func _on_button_button_down():
 
 
 func _on_button_pressed():
-	print('testtting')
+	print('testtting', self)
+	# put the item onto the player's hand - if there is money to be spent 

@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://vmrc4wcl6gyq"]
+
+[ext_resource type="PackedScene" uid="uid://cenrq142bhkmv" path="res://playSq.tscn" id="1_m6w8u"]
+[ext_resource type="Script" path="res://gridsq.gd" id="1_r1qye"]
+
+[node name="Gridsq" type="GridContainer"]
+offset_right = 392.0
+offset_bottom = 392.0
+size_flags_stretch_ratio = 0.0
+columns = 3
+script = ExtResource("1_r1qye")
+
+[node name="playSq" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+
+[node name="playSq2" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+
+[node name="playSq3" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+
+[node name="playSq4" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+
+[node name="playSq5" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+
+[node name="playSq6" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+
+[node name="playSq7" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+
+[node name="playSq8" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+
+[node name="playSq9" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
