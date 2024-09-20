@@ -10,7 +10,7 @@ size_flags_stretch_ratio = 0.0
 columns = 3
 script = ExtResource("1_r1qye")
 
-[node name="playSq" parent="." instance=ExtResource("1_m6w8u")]
+[node name="playSq1" parent="." instance=ExtResource("1_m6w8u")]
 layout_mode = 2
 
 [node name="playSq2" parent="." instance=ExtResource("1_m6w8u")]
