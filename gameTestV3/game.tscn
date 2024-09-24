@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://by52feusfu4mr"]
+[gd_scene load_steps=9 format=3 uid="uid://by52feusfu4mr"]
 
 [ext_resource type="Texture2D" uid="uid://0r84kp0inb5o" path="res://assests/Tilesets/Grass.png" id="1_hv3jk"]
+[ext_resource type="PackedScene" uid="uid://csdtebk0wsa5c" path="res://mouse.tscn" id="1_ycv3v"]
 [ext_resource type="Texture2D" uid="uid://ktvg3p8smvx3" path="res://assests/Tilesets/Fences.png" id="2_16td8"]
 [ext_resource type="PackedScene" uid="uid://vmrc4wcl6gyq" path="res://gridsq.tscn" id="3_5aapp"]
+[ext_resource type="Script" path="res://gameManager.gd" id="3_p432d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tcpgs"]
 texture = ExtResource("1_hv3jk")
@@ -116,6 +118,12 @@ layer_1/z_index = 5
 layer_1/tile_data = PackedInt32Array(1966085, 65537, 2, 1966087, 196609, 2, 1703943, 1, 0, 1703941, 1, 0, 1966086, 131073, 3, 1703942, 131073, 3, 1769477, 1, 0, 1835013, 1, 0, 1900549, 1, 0, 1769479, 1, 0, 1835015, 1, 0, 1900551, 1, 0)
 
 [node name="gameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_p432d")
+
+[node name="Mouse" parent="." instance=ExtResource("1_ycv3v")]
+z_index = 1
+position = Vector2(0, -2)
 
 [node name="Gridsq" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("3_5aapp")]
 z_index = 1
@@ -125,3 +133,8 @@ offset_right = 790.0
 offset_bottom = 498.0
 mouse_filter = 0
 shortcut_context = NodePath(".")
+
+[connection signal="mouse_clicked" from="Mouse" to="gameManager" method="_on_mouse_mouse_clicked"]
+[connection signal="mouse_doubleClicked" from="Mouse" to="gameManager" method="_on_mouse_mouse_double_clicked"]
+[connection signal="mouse_held" from="Mouse" to="gameManager" method="_on_mouse_mouse_held"]
+[connection signal="mouse_held_release" from="Mouse" to="gameManager" method="_on_mouse_mouse_held_release"]

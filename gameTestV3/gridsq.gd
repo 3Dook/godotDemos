@@ -1,5 +1,7 @@
 extends GridContainer
 
+@onready var game_manager = %gameManager
+
 @onready var gridsq = $"."
 
 var gridChildren = []
@@ -8,6 +10,7 @@ var gridChildren = []
 func _ready():
 	for child in gridsq.get_children():
 		gridChildren.append(child)
+		# connect each grid node to gameManager - node. 
 
 	print(gridChildren)
 # Called every frame. 'delta' is the elapsed time since the previous frame.

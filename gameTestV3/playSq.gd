@@ -8,36 +8,45 @@ extends Control
 @onready var text_label = $CenterContainer/Panel/direction/RichTextLabel
 
 var on_hover = false;
+
+# Signal
+
+# we already have a click button somewhere else - just need to know if mouse hover over or not
+signal slot_hovered
+signal slot_left
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 
-func _set_direction(direc):
-	text_label.text = direc
-
-func _get_drag_data(at_position):
-	# make the a dictionary with the data 
-	# start with the drag location.
-	# if there is data in the there square then it starts 
-
-	print('start get')
-	return self;
-	#if !text_label.text:
-		#return self;
-	#else:
-		#print("ending ")
-		
-func _can_drop_data(at_position, data):
-	return true
-
-func _drop_data(at_position, data):
-	print('droping data')	
-	print(data)
-	print(self);
-	# use vector make to find direction
-	# set previous direction to the direction of math
-	data.text_label.text = get_direction(get_square_postion(data), get_square_postion(self))
+#func _set_direction(direc):
+	#text_label.text = direc
+#
+#func _get_drag_data(at_position):
+	## make the a dictionary with the data 
+	## start with the drag location.
+	## if there is data in the there square then it starts 
+#
+	#print('start get')
+	#return self;
+	##if !text_label.text:
+		##return self;
+	##else:
+		##print("ending ")
+		#
+#func _can_drop_data(at_position, data):
+	#return true
+#
+#func _drop_data(at_position, data):
+	#print('droping data')	
+	#print(data)
+	#print(self);
+	## use vector make to find direction
+	## set previous direction to the direction of math
+	#data.text_label.text = get_direction(get_square_postion(data), get_square_postion(self))
 
 func get_square_postion(srePos):
 	return srePos.name.substr(6, srePos.name.length()-6).to_int()
@@ -95,3 +104,16 @@ func get_direction(sq1, sq2):
 #
 #func _on_focus_exited():
 	#print('not focused')
+
+#func _gui_input(event):
+	## ignore all mouse pressed
+	#if event is InputEventMouseButton and event.pressed:
+		##print(event)
+		##accept_event()
+		#get_tree().get_root().get_node("game").push_input(event)
+
+func _on_mouse_entered():
+	slot_hovered.emit(get_square_postion(self))
+	
+func _on_mouse_exited():
+	slot_left.emit(get_square_postion(self))
