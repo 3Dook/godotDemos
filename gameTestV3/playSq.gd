@@ -47,14 +47,22 @@ func _ready():
 	## use vector make to find direction
 	## set previous direction to the direction of math
 	#data.text_label.text = get_direction(get_square_postion(data), get_square_postion(self))
+func set_whereNext():
+	self.text_label.text = "?"
+
+func set_clearNext():
+		self.text_label.text = ""
+	
+func set_direction(nextSlot):
+	self.text_label.text = get_direction(get_square_postion(self), get_square_postion(nextSlot))
 
 func get_square_postion(srePos):
 	return srePos.name.substr(6, srePos.name.length()-6).to_int()
 
 func square_to_position(square):
-		var row = floor((square - 1) / 3)
-		var col = (square - 1) % 3
-		return Vector2(row, col)
+		var row = floor((square - 1) / 5)
+		var col = (square - 1) % 5
+		return Vector2(row, col) 
 
 func get_direction(sq1, sq2):
 	var pos1 = square_to_position(sq1)
@@ -113,7 +121,9 @@ func get_direction(sq1, sq2):
 		#get_tree().get_root().get_node("game").push_input(event)
 
 func _on_mouse_entered():
+	#print('entering', self)
 	slot_hovered.emit(get_square_postion(self))
 	
 func _on_mouse_exited():
+	#print('leaving', self)
 	slot_left.emit(get_square_postion(self))

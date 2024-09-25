@@ -127,10 +127,10 @@ position = Vector2(0, -2)
 
 [node name="Gridsq" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("3_5aapp")]
 z_index = 1
-offset_left = 398.0
-offset_top = 106.0
-offset_right = 790.0
-offset_bottom = 498.0
+offset_left = 294.0
+offset_top = 72.0
+offset_right = 950.0
+offset_bottom = 728.0
 mouse_filter = 0
 shortcut_context = NodePath(".")
 

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://7lw0mhxrfsnp"]
+
+[ext_resource type="Script" path="res://numbers.gd" id="1_w60jm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7wt4"]
+
+[node name="Numbers" type="CharacterBody2D"]
+z_index = 5
+position = Vector2(59, 61)
+scale = Vector2(5, 5)
+script = ExtResource("1_w60jm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o7wt4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -3.85714
+offset_top = -12.1429
+offset_right = 36.1429
+offset_bottom = 27.8571
+text = "1"

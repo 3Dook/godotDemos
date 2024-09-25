@@ -12,7 +12,12 @@ func _ready():
 		gridChildren.append(child)
 		# connect each grid node to gameManager - node. 
 
+	# add nodes into the grid
+	
+	
 	print(gridChildren)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
+
 func _process(delta):
 	pass
