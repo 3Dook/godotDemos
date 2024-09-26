@@ -5,25 +5,31 @@ const SPEED = 30.0
 
 var starting_pos: Vector2;
 
+@export var target_position: Vector2 = Vector2(position)
+
+signal where_next;
+
+var direction: Vector2
+
 func _ready():
 	starting_pos = position
 
 
 func _process(delta):
-	
-	change_direction('>')
+	change_direction()
 	 
-	if Input.is_action_just_pressed("restart"):
-		position = starting_pos
-	pass
 	
 
-func change_direction(where):
-	# move direction based on path
-	velocity.x = 1 * SPEED
-	move_and_slide()
-	pass
-
+func change_direction():
+	if position.distance_to(target_position) > 1:
+		direction = (target_position - position).normalized()
+		#print(target_position, ' vs position ', position)
+		#print(direction)
+		velocity = direction * 60#* SPEED
+		#print(velocity)
+		move_and_slide()
+		
+	
 
 #const JUMP_VELOCITY = -400.0
 #

@@ -7,6 +7,7 @@ extends Control
 @onready var item = $CenterContainer/Panel/item
 @onready var text_label = $CenterContainer/Panel/direction/RichTextLabel
 
+
 var on_hover = false;
 
 # Signal
@@ -14,11 +15,15 @@ var on_hover = false;
 # we already have a click button somewhere else - just need to know if mouse hover over or not
 signal slot_hovered
 signal slot_left
+@onready var rich_text_label = $CenterContainer/Panel/direction/RichTextLabel
+@onready var back_g = $CenterContainer/Panel/backG
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#print(self, position)
+	#print(self, global_position)
 	pass # Replace with function body.
 
 
