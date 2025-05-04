@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://j7lw286u24ux"]
+
+[ext_resource type="Script" uid="uid://cuk581orfp7p7" path="res://home_menu.gd" id="1_jwaq6"]
+
+[node name="homeMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 647.0
+script = ExtResource("1_jwaq6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 263.0
+offset_right = 725.0
+offset_bottom = 525.0
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "PLAY
+"
+
+[node name="options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "OPTIONS
+"
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "QUIT
+"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="play_game"]
+[connection signal="pressed" from="VBoxContainer/options" to="." method="options_game"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="quit_game"]

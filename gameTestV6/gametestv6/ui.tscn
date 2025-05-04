@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://hsxkfkd37idc"]
+
+[ext_resource type="Script" uid="uid://di0wckr6bxmwn" path="res://ui.gd" id="1_fyqef"]
+
+[node name="ui" type="CanvasLayer"]
+script = ExtResource("1_fyqef")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 65.0
+offset_top = 480.0
+offset_right = 134.0
+offset_bottom = 521.0
+text = "PLAY"
+
+[node name="discard" type="Button" parent="."]
+offset_left = 63.0
+offset_top = 528.0
+offset_right = 140.0
+offset_bottom = 559.0
+text = "DISCARD"
+
+[node name="Score" type="Label" parent="."]
+offset_left = 39.0
+offset_top = 73.0
+offset_right = 135.0
+offset_bottom = 122.0
+text = "SCORE: 0000
+"
+
+[node name="Money" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 158.0
+offset_right = 162.0
+offset_bottom = 216.0
+text = "$: "
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="discard" to="." method="_on_discard_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://mi413g0gopd5"]
 
 [ext_resource type="Texture2D" uid="uid://0r84kp0inb5o" path="res://assests/Tilesets/Grass.png" id="1_wywb8"]
-[ext_resource type="Script" path="res://GameManager.gd" id="1_xmvyt"]
+[ext_resource type="Script" uid="uid://bqqbq74k818cw" path="res://GameManager.gd" id="1_xmvyt"]
 [ext_resource type="PackedScene" uid="uid://dd31ejo4fytjj" path="res://inventory/inventory_ui.tscn" id="3_wx80o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ucor4"]

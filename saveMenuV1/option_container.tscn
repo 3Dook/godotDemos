@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bp075d6nu3biq"]
+
+[node name="optionContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 214.0
+offset_top = 64.0
+offset_right = 642.0
+offset_bottom = 375.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+toggle_mode = true
+text = "OPTION TOGGLE"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://de50pixfq36eu"]
 
-[ext_resource type="Script" path="res://drag_preview.gd" id="1_myxuu"]
+[ext_resource type="Script" uid="uid://duse3eivgmmle" path="res://drag_preview.gd" id="1_myxuu"]
 [ext_resource type="FontFile" uid="uid://c4g3kv6hvwbud" path="res://assests/fonts/PixelOperator8-Bold.ttf" id="2_l4j4a"]
 
 [node name="dragPreview" type="Sprite2D"]

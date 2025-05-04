@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://fu8dwmhpfx35"]
+
+[ext_resource type="Texture2D" uid="uid://dmupgkhpnspov" path="res://CuteCardsPixel_outline.png" id="1_kikvd"]
+[ext_resource type="Script" uid="uid://b54ayvw88x05x" path="res://card.gd" id="1_rjlel"]
+
+[node name="Card" type="Control"]
+custom_minimum_size = Vector2(26, 36)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 26.0
+offset_bottom = 36.0
+scale = Vector2(7, 7)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_rjlel")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(13, 18)
+texture = ExtResource("1_kikvd")
+hframes = 15
+vframes = 4

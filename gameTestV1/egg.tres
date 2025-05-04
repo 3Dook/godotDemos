@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Collectable" load_steps=3 format=3 uid="uid://jcy810eg6iq8"]
 
-[ext_resource type="Script" path="res://inventory/collectable.gd" id="1_jcypc"]
+[ext_resource type="Script" uid="uid://bvo6kibnmhddt" path="res://inventory/collectable.gd" id="1_jcypc"]
 [ext_resource type="Texture2D" uid="uid://h3nevwxh1bcf" path="res://assests/Egg_item.png" id="2_1c3pt"]
 
 [resource]

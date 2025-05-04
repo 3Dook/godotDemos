@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://yq0blyv6o3mr"]
+
+[ext_resource type="Script" uid="uid://brvfyq6qx5ulg" path="res://h_box_container.gd" id="1_chqpa"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+offset_right = 200.0
+offset_bottom = 50.0
+scale = Vector2(3.205, 3.205)
+size_flags_stretch_ratio = 0.0
+script = ExtResource("1_chqpa")

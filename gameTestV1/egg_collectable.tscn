@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5e0i6x56aksb"]
 
-[ext_resource type="Script" path="res://egg_collectable.gd" id="1_8f31l"]
+[ext_resource type="Script" uid="uid://2pxrlkh6rhu8" path="res://egg_collectable.gd" id="1_8f31l"]
 [ext_resource type="Texture2D" uid="uid://h3nevwxh1bcf" path="res://assests/Egg_item.png" id="2_328p1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lqx6h"]

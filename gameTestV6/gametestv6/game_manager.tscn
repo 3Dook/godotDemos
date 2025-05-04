@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwys56tpdllly"]
+
+[ext_resource type="Script" uid="uid://behf0ju0wwmfa" path="res://game_manager.gd" id="1_70yv6"]
+[ext_resource type="PackedScene" uid="uid://yq0blyv6o3mr" path="res://h_box_container.tscn" id="2_smx3j"]
+[ext_resource type="PackedScene" uid="uid://hsxkfkd37idc" path="res://ui.tscn" id="3_o2178"]
+
+[node name="GameManager" type="Node2D"]
+script = ExtResource("1_70yv6")
+
+[node name="HBoxContainer" parent="." instance=ExtResource("2_smx3j")]
+offset_left = 402.0
+offset_top = 446.0
+offset_right = 602.0
+offset_bottom = 496.0
+
+[node name="ui" parent="." instance=ExtResource("3_o2178")]
+
+[connection signal="pressed_discard" from="ui" to="." method="_on_ui_pressed_discard"]
+[connection signal="pressed_play" from="ui" to="." method="_on_ui_pressed_play"]

@@ -17,6 +17,7 @@ var startMoving = false
 
 var gridChildren = []
 var gridArray = []
+var mainArray;
 var passHover = []
 
 signal slot_hovered
@@ -41,13 +42,22 @@ func _ready():
 	# connect mouse buttons aasa well
 	
 	gridArray = list_to_grid(gridChildren, 5)
+	mainArray = make_grid(5)
+	print(mainArray)
 	print(gridArray)
 	# appending random number and get another final number
 	var random_start = randi_range(0, 24)  
 	var random_final = randi_range(0, 24)  
 	
 	#print(random_start)
-	random_start = 12
+	random_start = 0
+	
+	# update the mainArray 
+	var temp = get_slot_position(random_start)
+	print(temp)
+	
+	mainArray[temp.y][temp.x]["direction"] = "XXXX"
+	print(mainArray)
 	var startRandom = NUMBERS.instantiate();
 	
 	
@@ -179,7 +189,22 @@ func list_to_grid(array, col_size):
 		grid.append(array.slice(i, i + col_size))
 	return grid
 
-
+func make_grid(size):
+	var grid = [] 
+	var temp = 1
+	
+	for i in range(size):
+		var row_array = []
+		for j in range(size):
+			var data_dict = {
+				"pos": temp,
+				"direction": ""
+			}
+			temp += 1
+			row_array.append(data_dict)
+		grid.append(row_array)
+	
+	return grid
 func _on_mouse_mouse_clicked():
 	print('mouse clicked from game Manager at position ', mouse.get_global_mouse_position())
 

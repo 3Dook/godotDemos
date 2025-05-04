@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Collectable" load_steps=3 format=3 uid="uid://b11iehajvees2"]
 
-[ext_resource type="Script" path="res://inventory/collectable.gd" id="1_uurml"]
+[ext_resource type="Script" uid="uid://bvo6kibnmhddt" path="res://inventory/collectable.gd" id="1_uurml"]
 [ext_resource type="Texture2D" uid="uid://dun53hkfrbust" path="res://assests/apple.png" id="2_rgv2v"]
 
 [resource]

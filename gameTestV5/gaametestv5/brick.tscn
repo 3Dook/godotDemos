@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkh7xr8ewm7xc"]
+
+[ext_resource type="Script" uid="uid://dcusrdbppy06d" path="res://brick.gd" id="1_5p85m"]
+[ext_resource type="Texture2D" uid="uid://cpwe76rbmj24d" path="res://assests/inventory-background.png" id="1_awxk8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awxk8"]
+size = Vector2(18, 111)
+
+[node name="brick" type="CharacterBody2D"]
+script = ExtResource("1_5p85m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9, 56)
+scale = Vector2(1.063, 7)
+texture = ExtResource("1_awxk8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 55.5)
+shape = SubResource("RectangleShape2D_awxk8")
