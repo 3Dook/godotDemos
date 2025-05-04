@@ -16,6 +16,7 @@ var previousSlot: int
 var nextSlot: int
 
 
+
 var is_open = false
 @onready var click_timer = $clickTimer
 @onready var double_timer = $doubleTimer

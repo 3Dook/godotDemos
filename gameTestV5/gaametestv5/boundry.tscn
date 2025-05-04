@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://g2ju5ebpb78h"]
+
+[ext_resource type="Texture2D" uid="uid://bm5yihb6glys6" path="res://assests/paddle.png" id="1_xfc5u"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o0ibr"]
+
+[node name="boundry" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.25, 10)
+texture = ExtResource("1_xfc5u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_o0ibr")

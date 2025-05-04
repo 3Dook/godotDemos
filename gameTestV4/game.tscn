@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn65nw33bmisb"]
+
+[ext_resource type="PackedScene" uid="uid://csn24owcj5ox2" path="res://mouse.tscn" id="1_6pmaq"]
+
+[node name="Game" type="Node"]
+
+[node name="Mouse" parent="." instance=ExtResource("1_6pmaq")]

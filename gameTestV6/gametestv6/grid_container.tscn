@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5uyqerxunq6n"]
+
+[ext_resource type="PackedScene" uid="uid://fu8dwmhpfx35" path="res://card.tscn" id="1_rxlgd"]
+
+[node name="GridContainer" type="GridContainer"]
+custom_minimum_size = Vector2(16, 16)
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.36, 1.36)
+size_flags_stretch_ratio = 0.0
+columns = 5
+
+[node name="Card" parent="." instance=ExtResource("1_rxlgd")]
+layout_mode = 2
+
+[node name="Card2" parent="." instance=ExtResource("1_rxlgd")]
+layout_mode = 2
+
+[node name="Card3" parent="." instance=ExtResource("1_rxlgd")]
+layout_mode = 2
+
+[node name="Card4" parent="." instance=ExtResource("1_rxlgd")]
+layout_mode = 2

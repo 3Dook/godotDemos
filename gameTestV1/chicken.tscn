@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://df3xramnyemw1"]
 
-[ext_resource type="Script" path="res://chicken.gd" id="1_rqm0e"]
+[ext_resource type="Script" uid="uid://btntva5rl62q8" path="res://chicken.gd" id="1_rqm0e"]
 [ext_resource type="Texture2D" uid="uid://cxptdfics6tcb" path="res://assests/Free Chicken Sprites.png" id="2_gwue0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec4du"]

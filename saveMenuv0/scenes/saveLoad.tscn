@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://dws1msjdyu6sm"]
+
+[ext_resource type="PackedScene" uid="uid://dxoyoyvv2tce2" path="res://player.tscn" id="1_kmryq"]
+[ext_resource type="Script" path="res://saveJSON.gd" id="2_qvhnc"]
+
+[node name="Node" type="Node"]
+
+[node name="Game" type="Node2D" parent="."]
+
+[node name="Player" parent="Game" instance=ExtResource("1_kmryq")]
+position = Vector2(428, 118)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 7.0
+offset_top = 3.0
+offset_right = 1158.0
+offset_bottom = 651.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 32.0
+offset_right = 198.0
+offset_bottom = 330.0
+
+[node name="GridContainer" type="GridContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="saveJSON" type="Button" parent="Control/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "SAVE JSON"
+script = ExtResource("2_qvhnc")
+
+[node name="LOADJSON" type="Button" parent="Control/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "LOAD JSON
+"
+
+[node name="OpenUserData" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "userFolder
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Use the arrow keys or controller to move the player.
+"
+
+[connection signal="button_down" from="Control/VBoxContainer/GridContainer/saveJSON" to="Control/VBoxContainer/GridContainer/saveJSON" method="_on_button_down"]
+[connection signal="pressed" from="Control/VBoxContainer/GridContainer/saveJSON" to="Control/VBoxContainer/GridContainer/saveJSON" method="save_game"]
+[connection signal="pressed" from="Control/VBoxContainer/GridContainer/LOADJSON" to="Control/VBoxContainer/GridContainer/saveJSON" method="load_game"]

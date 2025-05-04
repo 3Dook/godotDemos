@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://cenrq142bhkmv"]
+
+[ext_resource type="Texture2D" uid="uid://cjg6yguf1yshj" path="res://assests/inventory-slot.png" id="1_08eq5"]
+[ext_resource type="Script" path="res://playSq.gd" id="1_w0jav"]
+
+[node name="playSq" type="Control" node_paths=PackedStringArray("shortcut_context")]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
+mouse_force_pass_scroll_events = false
+shortcut_context = NodePath(".")
+script = ExtResource("1_w0jav")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="backG" type="Sprite2D" parent="CenterContainer/Panel"]
+position = Vector2(64, 64)
+scale = Vector2(8, 8)
+texture = ExtResource("1_08eq5")
+
+[node name="ColorRect" type="ColorRect" parent="CenterContainer/Panel/backG"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.32549)
+custom_minimum_size = Vector2(16, 16)
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+mouse_filter = 2
+
+[node name="direction" type="Sprite2D" parent="CenterContainer/Panel"]
+position = Vector2(64, 64)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/Panel/direction"]
+custom_minimum_size = Vector2(16, 16)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -52.0
+offset_right = 28.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 70
+fit_content = true
+tab_size = 24
+
+[node name="item" type="Sprite2D" parent="CenterContainer/Panel"]
+position = Vector2(64, 64)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

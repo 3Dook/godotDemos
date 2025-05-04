@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Inventory" load_steps=8 format=3 uid="uid://dytvffx8h33ku"]
 
-[ext_resource type="Script" path="res://inventory/inventory.gd" id="1_3yasr"]
+[ext_resource type="Script" uid="uid://cfixqja1q6d38" path="res://inventory/inventory.gd" id="1_3yasr"]
 [ext_resource type="Resource" uid="uid://jcy810eg6iq8" path="res://egg.tres" id="1_c80cf"]
-[ext_resource type="Script" path="res://inventory/slot_data.gd" id="1_lmeq4"]
+[ext_resource type="Script" uid="uid://bnrd8d6yacyfj" path="res://inventory/slot_data.gd" id="1_lmeq4"]
 [ext_resource type="Resource" uid="uid://b11iehajvees2" path="res://apple.tres" id="3_5ji42"]
 
 [sub_resource type="Resource" id="Resource_lq5ka"]

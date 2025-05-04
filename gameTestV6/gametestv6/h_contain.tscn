@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctu0apav8pmiy"]
+
+[ext_resource type="PackedScene" uid="uid://fu8dwmhpfx35" path="res://card.tscn" id="2_aqkgg"]
+
+[sub_resource type="GDScript" id="GDScript_uw2ey"]
+script/source = "extends Container
+"
+
+[node name="h_contain" type="Container"]
+offset_right = 327.0
+offset_bottom = 92.0
+script = SubResource("GDScript_uw2ey")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Card3" parent="HBoxContainer" instance=ExtResource("2_aqkgg")]
+layout_mode = 2
+size_flags_stretch_ratio = 9.75
+
+[node name="Card4" parent="HBoxContainer" instance=ExtResource("2_aqkgg")]
+layout_mode = 2
+
+[node name="Card" parent="HBoxContainer" instance=ExtResource("2_aqkgg")]
+layout_mode = 2
+
+[node name="Card2" parent="HBoxContainer" instance=ExtResource("2_aqkgg")]
+layout_mode = 2
+
+[node name="Card5" parent="HBoxContainer" instance=ExtResource("2_aqkgg")]
+layout_mode = 2

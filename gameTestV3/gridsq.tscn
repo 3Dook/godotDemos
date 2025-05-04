@@ -1,0 +1,113 @@
+[gd_scene load_steps=3 format=3 uid="uid://vmrc4wcl6gyq"]
+
+[ext_resource type="PackedScene" uid="uid://cenrq142bhkmv" path="res://playSq.tscn" id="1_m6w8u"]
+[ext_resource type="Script" path="res://gridsq.gd" id="1_r1qye"]
+
+[node name="Gridsq" type="GridContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -574.0
+offset_top = -324.0
+offset_right = 82.0
+offset_bottom = 332.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+size_flags_stretch_ratio = 0.0
+columns = 5
+script = ExtResource("1_r1qye")
+
+[node name="playSq1" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="playSq2" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+
+[node name="playSq3" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+
+[node name="playSq4" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+
+[node name="playSq5" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+
+[node name="playSq6" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+
+[node name="playSq7" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+
+[node name="playSq8" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+
+[node name="playSq9" parent="." instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+
+[node name="playSq10" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+shortcut_context = NodePath("../playSq9")
+
+[node name="playSq11" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+shortcut_context = NodePath("../playSq9")
+
+[node name="playSq12" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+shortcut_context = NodePath("../playSq9")
+
+[node name="playSq13" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+shortcut_context = NodePath("../playSq9")
+
+[node name="playSq14" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+shortcut_context = NodePath("../playSq9")
+
+[node name="playSq15" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+shortcut_context = NodePath("../playSq9")
+
+[node name="playSq16" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+shortcut_context = NodePath("../playSq9")
+
+[node name="playSq17" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+shortcut_context = NodePath("../playSq9")
+
+[node name="playSq18" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+shortcut_context = NodePath("../playSq9")
+
+[node name="playSq19" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+shortcut_context = NodePath("../playSq9")
+
+[node name="playSq20" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+shortcut_context = NodePath("../playSq9")
+
+[node name="playSq21" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+shortcut_context = NodePath("../playSq9")
+
+[node name="playSq22" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+shortcut_context = NodePath("../playSq9")
+
+[node name="playSq23" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+shortcut_context = NodePath("../playSq9")
+
+[node name="playSq24" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+shortcut_context = NodePath("../playSq9")
+
+[node name="playSq25" parent="." node_paths=PackedStringArray("shortcut_context") instance=ExtResource("1_m6w8u")]
+layout_mode = 2
+shortcut_context = NodePath("../playSq9")

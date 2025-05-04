@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://2tq74rwr5275"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7wt4"]
+
+[node name="Final" type="CharacterBody2D"]
+z_index = 5
+position = Vector2(58, 58)
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o7wt4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -9.0
+offset_top = -11.6
+offset_right = 31.0
+offset_bottom = 28.4
+text = "=1"
